@@ -1,12 +1,12 @@
-use crate::treeer::container_tag::ContainerTag;
-use crate::treeer::tag::{Tag, AsTagName};
-use crate::treeer::core::{Core, StateAccessor, WithChildren, WithAttr, WithFlag};
-use crate::treeer::render::Render;
-
 use std::io::Write;
-use crate::treeer::self_contained_tag::SelfContainedTag;
+
+use crate::treeer::container_tag::ContainerTag;
+use crate::treeer::core::{Core, StateAccessor, WithChildren, WithAttr, WithFlag};
 use crate::treeer::element_member::{ContainerElementMember, SelfContainedElementMember};
 use crate::treeer::errors::TreeerErr;
+use crate::treeer::render::Render;
+use crate::treeer::self_contained_tag::SelfContainedTag;
+use crate::treeer::tag::{Tag, AsTagName};
 
 #[derive(Debug, Clone)]
 pub struct Workspace(Core);

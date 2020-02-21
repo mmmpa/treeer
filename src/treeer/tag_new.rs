@@ -1,11 +1,11 @@
 use modifier::Modifier;
-use crate::treeer::element::{OpeningElement, SelfContainedElement};
-use crate::treeer::tag::Tag;
 
+use crate::treeer::element::{OpeningElement, SelfContainedElement};
 use crate::treeer::element_member::ContainerElementMember::*;
 use crate::treeer::element_member::SelfContainedElementMember::*;
 use crate::treeer::element_member::{ContainerElementMember, SelfContainedElementMember};
 use crate::treeer::state::State;
+use crate::treeer::tag::Tag;
 
 fn new_opening_tag<M: Modifier<State>>(el: ContainerElementMember, m: M) -> OpeningElement {
     OpeningElement::new(el).set(m)

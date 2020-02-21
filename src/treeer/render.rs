@@ -1,4 +1,5 @@
 use std::io::Write;
+
 use crate::treeer::errors::TreeerErr;
 
 pub trait Render {

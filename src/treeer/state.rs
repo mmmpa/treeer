@@ -1,10 +1,9 @@
 use modifier::{Modifier, Set};
 use std::collections::BTreeMap;
-use crate::treeer::state_attr::*;
-
-use crate::treeer::element::{TextNode, SelfContainedElement, OpeningElement};
 use std::fmt::Debug;
 
+use crate::treeer::element::{TextNode, SelfContainedElement, OpeningElement};
+use crate::treeer::state_attr::*;
 
 pub type Attr = BTreeMap<String, String>;
 pub type Flags = Vec<String>;

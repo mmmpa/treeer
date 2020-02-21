@@ -1,10 +1,6 @@
-
-use crate::treeer::state::{StateChild};
-
-
-use crate::treeer::core::StateAccessor;
-
 use crate::treeer::child_receiver::ChildReceiver;
+use crate::treeer::core::StateAccessor;
+use crate::treeer::state::{StateChild};
 
 /// This is for tags which can contain other tags.
 pub trait ContainerTag: StateAccessor + Sized {

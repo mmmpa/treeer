@@ -1,10 +1,11 @@
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::treeer::state::{State, StateChild, Attr, Flags};
-use std::fmt::Debug;
 use modifier::Modifier;
 use modifier::Set;
+use std::cell::RefCell;
+use std::fmt::Debug;
+use std::rc::Rc;
+
 use crate::treeer::errors::TreeerErr;
+use crate::treeer::state::{State, StateChild, Attr, Flags};
 
 #[derive(Debug, Clone)]
 pub struct Core(CoreInner);

@@ -1,8 +1,7 @@
-#![allow(dead_code)]
-
-use crate::treeer::state::{StateChild, State};
-use crate::treeer::element::{SelfContainedElement, OpeningElement};
 use modifier::Modifier;
+
+use crate::treeer::element::{SelfContainedElement, OpeningElement};
+use crate::treeer::state::{StateChild, State};
 use crate::treeer::tag_new::TagNew;
 
 macro_rules! define_opening_elements {
