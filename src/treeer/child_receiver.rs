@@ -1,6 +1,6 @@
 use modifier::Modifier;
 
-use crate::treeer::element::{SelfContainedElement, OpeningElement};
+use crate::treeer::element::{SelfContainedElement, OpeningElement, TextNode};
 use crate::treeer::state::{StateChild, State};
 use crate::treeer::tag_new::TagNew;
 
@@ -42,6 +42,10 @@ impl ChildReceiver {
 
     fn push(&mut self, child: StateChild) {
         self.0.push(child);
+    }
+
+    pub fn text(&mut self, s: String) {
+        self.0.push(StateChild::TextNode(TextNode::new(s)));
     }
 
     define_opening_elements!(

@@ -59,14 +59,14 @@ impl Modifier<State> for () {
     fn modify(self, _src: &mut State) {}
 }
 
-impl Modifier<State> for AdhocAttr<'_> {
+impl Modifier<State> for AdhocAttr {
     fn modify(self, src: &mut State) {
         let AdhocAttr(key, value) = self;
         src._attr.insert(key.into(), value.into());
     }
 }
 
-impl Modifier<State> for PresetAttr<'_> {
+impl Modifier<State> for PresetAttr {
     fn modify(self, src: &mut State) {
         let PresetAttr(key, value) = self;
         src._attr.insert(key.into(), value.into());
@@ -101,6 +101,12 @@ impl Modifier<State> for Class<'_> {
 }
 
 impl Modifier<State> for &str {
+    fn modify(self, src: &mut State) {
+        self.to_string().modify(src)
+    }
+}
+
+impl Modifier<State> for String {
     fn modify(self, src: &mut State) {
         src.push(StateChild::TextNode(TextNode::new(self)));
     }
