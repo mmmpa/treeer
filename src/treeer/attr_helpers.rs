@@ -2,7 +2,7 @@ use crate::treeer::state_attr::{Class, AdhocAttr, IntAttr, IntPerAttr, FlagAttr,
 
 pub fn class<'a>(v: &'a [&'a str]) -> Class { Class(v) }
 
-pub fn any<'a>(k: &'a str, v: &'a str) -> AdhocAttr<'a> { AdhocAttr(k, v) }
+pub fn any(k: String, v: String) -> AdhocAttr { AdhocAttr(k, v) }
 
 pub fn width(v: usize) -> IntAttr { IntAttr("width", v) }
 pub fn height(v: usize) -> IntAttr { IntAttr("height", v) }
@@ -14,7 +14,7 @@ pub fn checked() -> FlagAttr { FlagAttr("checked") }
 
 macro_rules! define_string_attr {
     ( $( $name:tt => $str:expr ),* ) => { $(
-        pub fn $name(v: &str) -> PresetAttr { PresetAttr($str, v) }
+        pub fn $name(v: String) -> PresetAttr { PresetAttr($str, v) }
     )* };
 }
 
