@@ -1,7 +1,7 @@
 // ref: Index of the HTML 4 Attributes https://www.w3.org/TR/html401/index/attributes.html
 
-pub struct AdhocAttr<'a>(pub &'a str, pub &'a str);
-pub struct PresetAttr<'a>(pub &'static str, pub &'a str);
+pub struct AdhocAttr(pub String, pub String);
+pub struct PresetAttr(pub &'static str, pub String);
 pub struct IntAttr(pub &'static str, pub usize);
 pub struct IntPerAttr(pub &'static str, pub usize);
 pub struct FlagAttr(pub &'static str);
@@ -16,8 +16,8 @@ mod tests {
     #[test]
     fn it_works() {
         let mut state = State::default();
-        AdhocAttr("any", "some").modify(&mut state);
-        PresetAttr("preset", "value").modify(&mut state);
+        AdhocAttr("any".into(), "some".into()).modify(&mut state);
+        PresetAttr("preset", "value".into()).modify(&mut state);
         IntAttr("height", 100).modify(&mut state);
         IntPerAttr("width", 200).modify(&mut state);
         Class(&["a", "b"]).modify(&mut state);

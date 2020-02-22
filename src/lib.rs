@@ -14,12 +14,13 @@ mod tests {
           .inc(|t| {
               t.div(()).inc(|t| {
                   t.p(());
+                  t.text("additional".to_string())
               });
           })
           .render_string(100)
           .unwrap();
 
-        assert_eq!("<div><p></p></div>", html)
+        assert_eq!("<div><p></p>additional</div>", html)
     }
 
     #[test]
@@ -37,8 +38,8 @@ mod tests {
     fn render_attr() {
         let html = Workspace::default()
           .inc(|t| {
-              t.div((id("container"), disabled())).inc(|t| {
-                  t.img((src("/example.com"), disabled()));
+              t.div((id("container".into()), disabled())).inc(|t| {
+                  t.img((src("/example.com".into()), disabled()));
               });
           })
           .render_string(100)

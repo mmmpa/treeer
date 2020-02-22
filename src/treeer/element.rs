@@ -57,7 +57,7 @@ impl Default for SelfContainedElement { fn default() -> Self { Self { core: Core
 
 impl OpeningElement { pub fn new(element: ContainerElementMember) -> Self { Self { core: Core::default(), element } } }
 impl SelfContainedElement { pub fn new(element: SelfContainedElementMember) -> Self { Self { core: Core::default(), element } } }
-impl TextNode { pub fn new(t: &str) -> Self { Self(t.into()) } }
+impl TextNode { pub fn new(t: String) -> Self { Self(t.into()) } }
 
 impl WithChildren for Workspace {}
 impl WithChildren for OpeningElement {}
